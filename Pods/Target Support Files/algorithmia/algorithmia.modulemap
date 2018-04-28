@@ -1,0 +1,6 @@
+framework module algorithmia {
+  umbrella header "algorithmia-umbrella.h"
+
+  export *
+  module * { export * }
+}

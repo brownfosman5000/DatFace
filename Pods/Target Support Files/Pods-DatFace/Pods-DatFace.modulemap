@@ -1,0 +1,6 @@
+framework module Pods_DatFace {
+  umbrella header "Pods-DatFace-umbrella.h"
+
+  export *
+  module * { export * }
+}
