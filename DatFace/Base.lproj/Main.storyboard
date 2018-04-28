@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GoS-qS-Gbk">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,7 +15,7 @@
             <objects>
                 <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="DatFace" sceneMemberID="viewController">
                     <arscnView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="BrB-h1-WRS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </arscnView>
                     <connections>
@@ -30,7 +30,7 @@
             <objects>
                 <viewController id="GoS-qS-Gbk" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PYq-Of-JyL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XRO-ba-BP6">
@@ -60,12 +60,12 @@
             </objects>
             <point key="canvasLocation" x="-218" y="861"/>
         </scene>
-        <!--View Controller-->
+        <!--User View Controller-->
         <scene sceneID="7kb-Oi-dq0">
             <objects>
-                <viewController id="TdI-lf-Wp0" sceneMemberID="viewController">
+                <viewController id="TdI-lf-Wp0" customClass="UserViewController" customModule="DatFace" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mNh-DK-PRn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HRO-ee-KTN">
@@ -86,15 +86,80 @@
                                 <rect key="frame" x="171" y="519" width="32" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="nextButtonClicked:" destination="TdI-lf-Wp0" eventType="touchUpInside" id="2cN-dh-pNd"/>
+                                    <segue destination="6ma-xO-9EG" kind="show" identifier="goToCameraView" id="vpb-Rf-xP7"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="dfX-jO-7MW"/>
                     </view>
+                    <connections>
+                        <outlet property="ageTextField" destination="MOI-QX-lMJ" id="Zz0-Pe-gyh"/>
+                        <outlet property="userNameTextField" destination="HRO-ee-KTN" id="AQk-Jb-Is1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EJJ-eK-le3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="843" y="1129"/>
+            <point key="canvasLocation" x="1046" y="1162"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="cae-N0-r29">
+            <objects>
+                <viewController id="6ma-xO-9EG" customClass="CameraViewController" customModule="DatFace" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ope-gy-SGz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o7R-la-e8p" customClass="CameraPreviewView" customModule="DatFace" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="166"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lsI-os-d2e">
+                                <rect key="frame" x="161" y="479" width="76" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Take Photo"/>
+                                <connections>
+                                    <action selector="takePhotoButtonClicked:" destination="6ma-xO-9EG" eventType="touchUpInside" id="dH9-fM-1v2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="xeS-MI-n44"/>
+                    </view>
+                    <connections>
+                        <outlet property="previewView" destination="o7R-la-e8p" id="6Nf-DQ-OJT"/>
+                        <outlet property="takePhotoButton" destination="lsI-os-d2e" id="00V-Qh-06a"/>
+                        <segue destination="pKX-tr-PKu" kind="show" identifier="goToNext" id="9Hr-KF-h7r"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qjG-Qh-KVz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1776.8" y="1161.7691154422789"/>
+        </scene>
+        <!--Meet Others View Controller-->
+        <scene sceneID="aCw-og-s45">
+            <objects>
+                <viewController id="pKX-tr-PKu" customClass="MeetOthersViewController" customModule="DatFace" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SNj-fG-qaY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kIx-bq-MV4">
+                                <rect key="frame" x="137" y="470" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="hEf-tp-os7"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XS7-QD-ORQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2595" y="1161"/>
         </scene>
     </scenes>
 </document>
