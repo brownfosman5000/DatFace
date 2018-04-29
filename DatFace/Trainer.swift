@@ -34,52 +34,72 @@ class Trainer{
             print(error)
         }
         print(self.photos)
-        predict()
+//        predict()
         return self.photos
         
     }
     
-    func trainImages()  {
-        photos.remove(at: 0)
-        let json: [String:Any] = [
-            "action" : "add_images",
-            "name_space": "datFace",
-            "data_collection": "datFace",
-            "images": photos
-            ]
-        
-        print(JSONSerialization.isValidJSONObject(json))
-        
-        client = Algorithmia.client(simpleKey: APIkey)
-        let algo = client.algo(algoUri: "cv/FaceRecognition/0.2.2")
-        
-        algo.pipe(json: json) { (resp, error) in
-            print(resp.getJson())
-        }
-    }
+//    func trainImages()  {
+//        datFaceCollection.file(name: text_file).exists() { exists, error in
+//            if (error == nil) {
+//                // Check if file exists
+//                let local_file = URL(string: "/your_local_path_to_file/jack_london.txt")
+//                if (exists == false) {
+//                    nlp_directory.put(file: local_file!) { error in
+//                        if (error == nil){
+//                            print("File Uploaded Succesfully")
+//                        } else {
+//                            print(error)
+//                        }
+//                    }
+//                }
+//                    // Add this to download contents of file
+//                else {
+//                    // Download contents of file as a string
+//                    nlp_directory.file(name: text_file).getString { text, error in
+//                        if (error == nil) {
+//                            let input = text
+//                            // Add the call to the Summarizer algorithm
+//                            let summarizer = client.algo(algoUri: "nlp/Summarizer/0.1.3")
+//                            summarizer.pipe(text: input) { resp, error in
+//                                if (error == nil) {
+//                                    print(resp.getText())
+//                                } else {
+//                                    print(error)
+//                                }
+//                            }
+//                        } else {
+//                            print(error)
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//        }
+//    }
     
-    func predict(){
-        photos.remove(at: 0)
-        let json: [String:Any] = [
-            "action" : "predict",
-            "name_space": "datFace",
-            "data_collection": "datFace",
-            "images":
-                [
-                    "url": "data://brownfosman5000/DatFace/download.png",
-                    "output": "data://brownfosman5000/DatFace/h.k.1.jpeg"
-            ]
-        ]
-        
-        print(JSONSerialization.isValidJSONObject(json))
-        
-        client = Algorithmia.client(simpleKey: APIkey)
-        let algo = client.algo(algoUri: "cv/FaceRecognition/0.2.2")
-        
-        algo.pipe(json: json) { (resp, error) in
-            print(resp.getJson())
-        }
-    }
+//    func predict(){
+//        photos.remove(at: 0)
+//        let json: [String:Any] = [
+//            "action" : "predict",
+//            "name_space": "datFace",
+//            "data_collection": "datFace",
+//            "images":
+//                [
+//                    "url": "data://brownfosman5000/DatFace/download.png",
+//                    "output": "data://brownfosman5000/DatFace/h.k.1.jpeg"
+//            ]
+//        ]
+//
+//        print(JSONSerialization.isValidJSONObject(json))
+//
+//        client = Algorithmia.client(simpleKey: APIkey)
+//        let algo = client.algo(algoUri: "cv/FaceRecognition/0.2.2")
+//
+//        algo.pipe(json: json) { (resp, error) in
+//            print(resp.getJson())
+//        }
+//    }
 
 }
 
