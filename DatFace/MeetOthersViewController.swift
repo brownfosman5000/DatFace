@@ -16,7 +16,7 @@ class MeetOthersViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        trainer.getImages()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,7 +24,10 @@ class MeetOthersViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func buttonClicked(_ sender: Any) {
+        trainer.getImages()
+    }
+    
     /*
     // MARK: - Navigation
 

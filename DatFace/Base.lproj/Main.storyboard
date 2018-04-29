@@ -151,6 +151,9 @@
                                 <rect key="frame" x="137" y="470" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="pKX-tr-PKu" eventType="touchUpInside" id="4RZ-0r-Q11"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

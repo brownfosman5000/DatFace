@@ -23,13 +23,14 @@ class Trainer{
     }
     func getImages(){
         let image_dir = client.dir(datFaceCollection)
-        print("ImageDIR: \(image_dir)")
-
-        image_dir.forEach(file: { (algoFile) in
-            algoFile.
+        image_dir.forEach(file: { (file) in
+            print(file?.path)
         }) { (error) in
-            print(error)
+        
         }
+        
+        
+    }
     
     //Create dictionary Format
     func configureDictionaryFormat(with url: String)-> [String:String]{
@@ -41,5 +42,5 @@ class Trainer{
 
 }
 
-}
+
 
