@@ -8,4 +8,5 @@ target 'DatFace' do
   # Pods for DatFace
   pod 'Alamofire', '~> 4.7'
   pod 'algorithmia'
+  pod 'PKHUD', '~> 5.0'
 end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+
 		572404902094178400804247 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5724048F2094178400804247 /* UserViewController.swift */; };
 		5724049220941C1A00804247 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5724049120941C1A00804247 /* CameraViewController.swift */; };
 		5724049620944CB400804247 /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5724049520944CB400804247 /* CameraPreviewView.swift */; };
@@ -14,6 +15,7 @@
 		57661D7220950B4E00A83431 /* Trainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57661D7120950B4E00A83431 /* Trainer.swift */; };
 		57661D74209519F300A83431 /* MeetOthersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57661D73209519F300A83431 /* MeetOthersViewController.swift */; };
 		578049B420940BCA00F694CF /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578049B320940BCA00F694CF /* config.swift */; };
+
 		57FAC4BD209409EB0067B62F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FAC4BC209409EB0067B62F /* AppDelegate.swift */; };
 		57FAC4BF209409EB0067B62F /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 57FAC4BE209409EB0067B62F /* art.scnassets */; };
 		57FAC4C1209409EB0067B62F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FAC4C0209409EB0067B62F /* ViewController.swift */; };
@@ -24,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		2E080D91BD5E8870B0A50CDB /* Pods-DatFace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DatFace.release.xcconfig"; path = "Pods/Target Support Files/Pods-DatFace/Pods-DatFace.release.xcconfig"; sourceTree = "<group>"; };
+
 		5724048F2094178400804247 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		5724049120941C1A00804247 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		5724049520944CB400804247 /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
@@ -81,6 +84,7 @@
 				57FAC4C2209409EB0067B62F /* Main.storyboard */,
 				57FAC4C5209409EC0067B62F /* Assets.xcassets */,
 				57FAC4CA209409EC0067B62F /* Info.plist */,
+
 				578049B320940BCA00F694CF /* config.swift */,
 				5724048F2094178400804247 /* UserViewController.swift */,
 				5724049520944CB400804247 /* CameraPreviewView.swift */,
@@ -204,11 +208,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-DatFace/Pods-DatFace-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/algorithmia/algorithmia.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/algorithmia.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+
 				578049B420940BCA00F694CF /* config.swift in Sources */,
 				57661D74209519F300A83431 /* MeetOthersViewController.swift in Sources */,
 				5724049220941C1A00804247 /* CameraViewController.swift in Sources */,
