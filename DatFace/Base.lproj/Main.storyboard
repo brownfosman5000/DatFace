@@ -13,15 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="DatFace" sceneMemberID="viewController">
-                    <arscnView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="BrB-h1-WRS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </arscnView>
-                    <connections>
-                        <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
-                    </connections>
-                </viewController>
+                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="DatFace" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
@@ -33,32 +25,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XRO-ba-BP6">
-                                <rect key="frame" x="99" y="150" width="155" height="115"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <state key="normal" title="Nikki"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="screen-page" translatesAutoresizingMaskIntoConstraints="NO" id="znI-Ac-i9y">
+                                <rect key="frame" x="0.0" y="-613" width="375" height="1280"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XRO-ba-BP6">
+                                <rect key="frame" x="58" y="353" width="259" height="69"/>
+                                <color key="backgroundColor" red="0.23921568627450979" green="0.76078431372549016" blue="0.81960784313725488" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="27"/>
+                                <state key="normal" title="SCAN">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="BV1-FR-VrT" kind="show" id="9DM-ij-lI7"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eKj-9s-dKC">
-                                <rect key="frame" x="81" y="338" width="190" height="141"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Foster"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eKj-9s-dKC">
+                                <rect key="frame" x="92" y="612" width="190" height="49"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="31"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="TdI-lf-Wp0" kind="show" id="50J-of-saq"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="NVm-la-L4I" firstAttribute="bottom" secondItem="eKj-9s-dKC" secondAttribute="bottom" constant="10" id="3dE-Ub-MNK"/>
+                            <constraint firstItem="NVm-la-L4I" firstAttribute="bottom" secondItem="znI-Ac-i9y" secondAttribute="bottom" id="3uA-vA-RjC"/>
+                            <constraint firstItem="NVm-la-L4I" firstAttribute="trailing" secondItem="eKj-9s-dKC" secondAttribute="trailing" constant="93" id="82p-ja-tP1"/>
+                            <constraint firstItem="eKj-9s-dKC" firstAttribute="top" secondItem="XRO-ba-BP6" secondAttribute="bottom" constant="190" id="9c2-kH-JQx"/>
+                            <constraint firstItem="znI-Ac-i9y" firstAttribute="leading" secondItem="NVm-la-L4I" secondAttribute="leading" id="AZ6-2j-oTG"/>
+                            <constraint firstItem="eKj-9s-dKC" firstAttribute="leading" secondItem="NVm-la-L4I" secondAttribute="leading" constant="92" id="JLU-nJ-IMe"/>
+                            <constraint firstItem="NVm-la-L4I" firstAttribute="trailing" secondItem="XRO-ba-BP6" secondAttribute="trailing" constant="58" id="Lfl-aK-L0S"/>
+                            <constraint firstItem="NVm-la-L4I" firstAttribute="bottom" secondItem="eKj-9s-dKC" secondAttribute="bottom" constant="6" id="QWY-Vd-V4D"/>
+                            <constraint firstItem="eKj-9s-dKC" firstAttribute="leading" secondItem="NVm-la-L4I" secondAttribute="leading" constant="92" id="Tes-tV-t7H"/>
+                            <constraint firstItem="XRO-ba-BP6" firstAttribute="leading" secondItem="NVm-la-L4I" secondAttribute="leading" constant="58" id="U81-2u-H32"/>
+                            <constraint firstItem="XRO-ba-BP6" firstAttribute="leading" secondItem="NVm-la-L4I" secondAttribute="leading" constant="58" id="ZYo-sJ-n62"/>
+                            <constraint firstItem="NVm-la-L4I" firstAttribute="trailing" secondItem="XRO-ba-BP6" secondAttribute="trailing" constant="58" id="c2d-k7-18S"/>
+                            <constraint firstItem="NVm-la-L4I" firstAttribute="trailing" secondItem="eKj-9s-dKC" secondAttribute="trailing" constant="93" id="g9d-CF-n1K"/>
+                            <constraint firstAttribute="trailing" secondItem="znI-Ac-i9y" secondAttribute="trailing" id="joy-1J-9MF"/>
+                            <constraint firstItem="XRO-ba-BP6" firstAttribute="top" secondItem="NVm-la-L4I" secondAttribute="top" constant="333" id="ujv-dv-1WS"/>
+                            <constraint firstItem="XRO-ba-BP6" firstAttribute="top" secondItem="NVm-la-L4I" secondAttribute="top" constant="229" id="usT-if-EuR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="NVm-la-L4I"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="chn-Ds-ZDt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-218" y="861"/>
+            <point key="canvasLocation" x="-218.40000000000001" y="859.52023988005999"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="7kb-Oi-dq0">
@@ -97,4 +113,7 @@
             <point key="canvasLocation" x="843" y="1129"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="screen-page" width="720" height="1280"/>
+    </resources>
 </document>
