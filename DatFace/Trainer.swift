@@ -13,7 +13,7 @@ class Trainer{
     
     var client:  AlgorithmiaClient!
     var datFaceCollection: String!
-    
+    var photos: [[String:String]] = [[:]]
     var photoInfo: [String:String] = [:]
     init(){
         client = Algorithmia.client(simpleKey: APIkey)
@@ -21,26 +21,69 @@ class Trainer{
         
         
     }
-    func getImages(){
+    func getImages()->[[String:String]]{
         let image_dir = client.dir(datFaceCollection)
         image_dir.forEach(file: { (file) in
-            print(file?.path)
+
+            self.photoInfo["url"] = file?.path
+            self.photos.append(self.photoInfo)
+            
+            
         }) { (error) in
-        
+            
+            print(error)
         }
-        
+        print(self.photos)
+        predict()
+        return self.photos
         
     }
     
-    //Create dictionary Format
-    func configureDictionaryFormat(with url: String)-> [String:String]{
-        return [
-            String("url") : String("\(datFaceCollection)/\(url).jpeg"),
-            String("person") : String(url)
+    func trainImages()  {
+        photos.remove(at: 0)
+        let json: [String:Any] = [
+            "action" : "add_images",
+            "name_space": "datFace",
+            "data_collection": "datFace",
+            "images": photos
+            ]
+        
+        print(JSONSerialization.isValidJSONObject(json))
+        
+        client = Algorithmia.client(simpleKey: APIkey)
+        let algo = client.algo(algoUri: "cv/FaceRecognition/0.2.2")
+        
+        algo.pipe(json: json) { (resp, error) in
+            print(resp.getJson())
+        }
+    }
+    
+    func predict(){
+        photos.remove(at: 0)
+        let json: [String:Any] = [
+            "action" : "predict",
+            "name_space": "datFace",
+            "data_collection": "datFace",
+            "images":
+                [
+                    "url": "data://brownfosman5000/DatFace/download.png",
+                    "output": "data://brownfosman5000/DatFace/h.k.1.jpeg"
+            ]
         ]
+        
+        print(JSONSerialization.isValidJSONObject(json))
+        
+        client = Algorithmia.client(simpleKey: APIkey)
+        let algo = client.algo(algoUri: "cv/FaceRecognition/0.2.2")
+        
+        algo.pipe(json: json) { (resp, error) in
+            print(resp.getJson())
+        }
     }
 
 }
+
+
 
 
 
