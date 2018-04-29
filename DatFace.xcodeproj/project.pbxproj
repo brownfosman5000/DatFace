@@ -13,7 +13,6 @@
 		57FAC4C4209409EB0067B62F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57FAC4C2209409EB0067B62F /* Main.storyboard */; };
 		57FAC4C6209409EC0067B62F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57FAC4C5209409EC0067B62F /* Assets.xcassets */; };
 		886368F416691497FA9F40D2 /* Pods_DatFace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60BE376C8547F90CAE0A1824 /* Pods_DatFace.framework */; };
-		A51B5F65209484FB0016D6CD /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51B5F64209484FB0016D6CD /* config.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +26,6 @@
 		57FAC4CA209409EC0067B62F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60BE376C8547F90CAE0A1824 /* Pods_DatFace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DatFace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2D88CA013FD87E9A7B23A20 /* Pods-DatFace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DatFace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DatFace/Pods-DatFace.debug.xcconfig"; sourceTree = "<group>"; };
-		A51B5F64209484FB0016D6CD /* config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +67,6 @@
 				57FAC4C2209409EB0067B62F /* Main.storyboard */,
 				57FAC4C5209409EC0067B62F /* Assets.xcassets */,
 				57FAC4CA209409EC0067B62F /* Info.plist */,
-				A51B5F64209484FB0016D6CD /* config.swift */,
 			);
 			path = DatFace;
 			sourceTree = "<group>";
@@ -207,7 +204,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A51B5F65209484FB0016D6CD /* config.swift in Sources */,
 				57FAC4C1209409EB0067B62F /* ViewController.swift in Sources */,
 				57FAC4BD209409EB0067B62F /* AppDelegate.swift in Sources */,
 			);
@@ -349,7 +345,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 92NZHY756F;
 				INFOPLIST_FILE = DatFace/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = N.DatFace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -365,7 +364,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 92NZHY756F;
 				INFOPLIST_FILE = DatFace/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = N.DatFace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
