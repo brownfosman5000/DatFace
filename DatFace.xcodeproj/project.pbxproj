@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+
+		572404902094178400804247 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5724048F2094178400804247 /* UserViewController.swift */; };
+		5724049220941C1A00804247 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5724049120941C1A00804247 /* CameraViewController.swift */; };
+		5724049620944CB400804247 /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5724049520944CB400804247 /* CameraPreviewView.swift */; };
+		57661D6E20946B2900A83431 /* PhotoCaptureProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57661D6D20946B2900A83431 /* PhotoCaptureProcessor.swift */; };
+		57661D7220950B4E00A83431 /* Trainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57661D7120950B4E00A83431 /* Trainer.swift */; };
+		57661D74209519F300A83431 /* MeetOthersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57661D73209519F300A83431 /* MeetOthersViewController.swift */; };
+		578049B420940BCA00F694CF /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578049B320940BCA00F694CF /* config.swift */; };
+
 		57FAC4BD209409EB0067B62F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FAC4BC209409EB0067B62F /* AppDelegate.swift */; };
 		57FAC4BF209409EB0067B62F /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 57FAC4BE209409EB0067B62F /* art.scnassets */; };
 		57FAC4C1209409EB0067B62F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FAC4C0209409EB0067B62F /* ViewController.swift */; };
@@ -17,6 +26,14 @@
 
 /* Begin PBXFileReference section */
 		2E080D91BD5E8870B0A50CDB /* Pods-DatFace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DatFace.release.xcconfig"; path = "Pods/Target Support Files/Pods-DatFace/Pods-DatFace.release.xcconfig"; sourceTree = "<group>"; };
+
+		5724048F2094178400804247 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		5724049120941C1A00804247 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		5724049520944CB400804247 /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
+		57661D6D20946B2900A83431 /* PhotoCaptureProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCaptureProcessor.swift; sourceTree = "<group>"; };
+		57661D7120950B4E00A83431 /* Trainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trainer.swift; sourceTree = "<group>"; };
+		57661D73209519F300A83431 /* MeetOthersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetOthersViewController.swift; sourceTree = "<group>"; };
+		578049B320940BCA00F694CF /* config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
 		57FAC4B9209409EB0067B62F /* DatFace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DatFace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57FAC4BC209409EB0067B62F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57FAC4BE209409EB0067B62F /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -67,6 +84,14 @@
 				57FAC4C2209409EB0067B62F /* Main.storyboard */,
 				57FAC4C5209409EC0067B62F /* Assets.xcassets */,
 				57FAC4CA209409EC0067B62F /* Info.plist */,
+
+				578049B320940BCA00F694CF /* config.swift */,
+				5724048F2094178400804247 /* UserViewController.swift */,
+				5724049520944CB400804247 /* CameraPreviewView.swift */,
+				5724049120941C1A00804247 /* CameraViewController.swift */,
+				57661D73209519F300A83431 /* MeetOthersViewController.swift */,
+				57661D6D20946B2900A83431 /* PhotoCaptureProcessor.swift */,
+				57661D7120950B4E00A83431 /* Trainer.swift */,
 			);
 			path = DatFace;
 			sourceTree = "<group>";
@@ -204,6 +229,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+
+				578049B420940BCA00F694CF /* config.swift in Sources */,
+				57661D74209519F300A83431 /* MeetOthersViewController.swift in Sources */,
+				5724049220941C1A00804247 /* CameraViewController.swift in Sources */,
+				5724049620944CB400804247 /* CameraPreviewView.swift in Sources */,
+				572404902094178400804247 /* UserViewController.swift in Sources */,
+				57661D6E20946B2900A83431 /* PhotoCaptureProcessor.swift in Sources */,
+				57661D7220950B4E00A83431 /* Trainer.swift in Sources */,
 				57FAC4C1209409EB0067B62F /* ViewController.swift in Sources */,
 				57FAC4BD209409EB0067B62F /* AppDelegate.swift in Sources */,
 			);
