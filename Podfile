@@ -6,6 +6,6 @@ target 'DatFace' do
   use_frameworks!
 
   # Pods for DatFace
-  pod 'Alamofire', '~> 4.7'
+  pod 'Alamofire'
   pod 'algorithmia'
 end

@@ -27,10 +27,7 @@ class PhotoCaptureProcessor: NSObject,AVCapturePhotoCaptureDelegate{
     var baseURL: String!
     var fileManager = FileManager.default
     
-    //Array of dictionary images -- ie.. {"url": "data://{0}".format(file.path), "person": label})
-
-    var images = [[:]]
-    
+    //Array of dictionary images -- ie.. {"url": "data://{0}".format(file.path), "person": label})    
     
     override init() {
         super.init()

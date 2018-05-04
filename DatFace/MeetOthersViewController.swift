@@ -11,12 +11,12 @@ import UIKit
 class MeetOthersViewController: UIViewController {
     
     var trainer = Trainer()
-    
+    var baseURL: String!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        
+        trainer.setID(ID: baseURL)
     }
 
     override func didReceiveMemoryWarning() {

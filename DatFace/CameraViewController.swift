@@ -6,14 +6,7 @@
 //  Copyright © 2018 N. All rights reserved.
 //
 import AVKit
-class CameraViewController: UIViewController{//savingDelegate {
-    
-    //Delegate function
-//    func didFinishSaving() {
-//        imageView.image = captureProcessor.image
-//        print("done")
-//    }
-    
+class CameraViewController: UIViewController{
         
     @IBOutlet weak var takePhotoButton: UIButton!
     
@@ -103,6 +96,13 @@ class CameraViewController: UIViewController{//savingDelegate {
         
         if buttonCounter > 9{
             performSegue(withIdentifier: "goToNext", sender: self)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let newVC = segue.destination as? MeetOthersViewController{
+            let destinationVC = newVC
+            destinationVC.baseURL = basePhotoURL
         }
     }
 
