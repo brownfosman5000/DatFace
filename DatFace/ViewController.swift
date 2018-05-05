@@ -7,74 +7,89 @@
 //
 
 import UIKit
-import SceneKit
-import ARKit
+import AVFoundation
+import AVKit
+import Vision
+import PKHUD
 
-class ViewController: UIViewController, ARSCNViewDelegate {
 
-    @IBOutlet var sceneView: ARSCNView!
+class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate{
+    
+    
+//    private var scanTimer: Timer? // how often to scan for faces
+    var scannedFaceViews = [UIView]() // detected faces will be here
+    var faces = [CALayer]()
+    var previewLayer = CALayer()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let bounds = view.frame
+        let captureSession = AVCaptureSession()
         
-        // Set the view's delegate
-        sceneView.delegate = self
+        guard let captureDevice = AVCaptureDevice.default(for: .video) else {return}
+        guard let input = try? AVCaptureDeviceInput(device: captureDevice) else {return}
+        captureSession.addInput(input)
+        captureSession.startRunning()
         
-        // Show statistics such as fps and timing information
-        sceneView.showsStatistics = true
+        let previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        view.layer.addSublayer(previewLayer)
+        previewLayer.frame = bounds
         
-        // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
+        let dataOutput = AVCaptureVideoDataOutput()
+        captureSession.addOutput(dataOutput)
+        dataOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "videoQ"))
         
-        // Set the scene to the view
-        sceneView.scene = scene
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+//        DispatchQueue.main.async {
+            _ = faces.map { $0.removeFromSuperlayer() }
+            faces.removeAll()
+//        }
+    
         
-        // Create a session configuration
-        let configuration = ARWorldTrackingConfiguration()
+        guard let pixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {return}
+        let request = VNDetectRectanglesRequest { (req, err) in
+            if let err = err {
+                print("Failed to detect faced")
+            }
+//            print(req.results)
+            req.results?.forEach({ (res) in
+                guard let faceObservation = res as? VNRectangleObservation else {return}
+                DispatchQueue.main.async {
+                    let box = CALayer()
+                    let cyan = UIColor.cyan.withAlphaComponent(0.4)
+                    box.backgroundColor = cyan.cgColor
+//                    let height = self.previewLayer.frame.height * faceObservation.boundingBox.height
+////                    let y = self.view.frame.width * (1 - faceObservation.boundingBox.origin.y) // height
+//                    let y = self.previewLayer.frame.width * faceObservation.boundingBox.origin.y - height // height
+//                    let x = self.previewLayer.frame.width * faceObservation.boundingBox.origin.x
+//                    let width = self.previewLayer.frame.width * faceObservation.boundingBox.width
+                    
+                    
+                    
+//                    let height = self.view.frame.height * faceObservation.boundingBox.height
+                    let height = CGFloat(100.0)
+//                    let y = self.view.frame.width * (1 - faceObservation.boundingBox.origin.y) - height // height
+                    let y = self.view.frame.height * (1 - faceObservation.boundingBox.origin.y) - height  // height
+                    let x = self.view.frame.width * faceObservation.boundingBox.origin.x
+                    let width = self.view.frame.width * faceObservation.boundingBox.width
+                    
 
-        // Run the view's session
-        sceneView.session.run(configuration)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        // Pause the view's session
-        sceneView.session.pause()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Release any cached data, images, etc that aren't in use.
-    }
+                    box.frame = CGRect(x: x, y: y, width: width, height: height)
+                    self.view.layer.insertSublayer(box, above: self.previewLayer)
+                    self.faces.append(box)
+                }
+            })
+        }
+        let handler =  VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [ : ])
+        do {
+            try handler.perform([request])
+        } catch let err {
+            print("Failed to perform FD request", err)
+        }
+    }// end captureOutput
 
-    // MARK: - ARSCNViewDelegate
-    
-/*
-    // Override to create and configure nodes for anchors added to the view's session.
-    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-        let node = SCNNode()
-     
-        return node
-    }
-*/
-    
-    func session(_ session: ARSession, didFailWithError error: Error) {
-        // Present an error message to the user
-        
-    }
-    
-    func sessionWasInterrupted(_ session: ARSession) {
-        // Inform the user that the session has been interrupted, for example, by presenting an overlay
-        
-    }
-    
-    func sessionInterruptionEnded(_ session: ARSession) {
-        // Reset tracking and/or remove existing anchors if consistent tracking is required
-        
-    }
-}
+} // end class
+
