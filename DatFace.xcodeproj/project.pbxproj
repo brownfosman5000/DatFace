@@ -14,13 +14,8 @@
 		57661D6E20946B2900A83431 /* PhotoCaptureProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57661D6D20946B2900A83431 /* PhotoCaptureProcessor.swift */; };
 		57661D7220950B4E00A83431 /* Trainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57661D7120950B4E00A83431 /* Trainer.swift */; };
 		57661D74209519F300A83431 /* MeetOthersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57661D73209519F300A83431 /* MeetOthersViewController.swift */; };
-<<<<<<< HEAD
 		57BC9384209BF59900288430 /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BC9383209BF59900288430 /* config.swift */; };
 		57C03C6F209D41D000EF0789 /* Predictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C03C6E209D41D000EF0789 /* Predictor.swift */; };
-=======
-		578049B420940BCA00F694CF /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578049B320940BCA00F694CF /* config.swift */; };
-
->>>>>>> c7ca22312f8233a3a48b5fb701db3bea5894f8de
 		57FAC4BD209409EB0067B62F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FAC4BC209409EB0067B62F /* AppDelegate.swift */; };
 		57FAC4BF209409EB0067B62F /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 57FAC4BE209409EB0067B62F /* art.scnassets */; };
 		57FAC4C1209409EB0067B62F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FAC4C0209409EB0067B62F /* ViewController.swift */; };
