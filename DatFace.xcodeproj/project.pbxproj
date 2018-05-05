@@ -85,12 +85,8 @@
 				57FAC4C2209409EB0067B62F /* Main.storyboard */,
 				57FAC4C5209409EC0067B62F /* Assets.xcassets */,
 				57FAC4CA209409EC0067B62F /* Info.plist */,
-<<<<<<< HEAD
 				57BC9383209BF59900288430 /* config.swift */,
-=======
 
-				578049B320940BCA00F694CF /* config.swift */,
->>>>>>> c7ca22312f8233a3a48b5fb701db3bea5894f8de
 				5724048F2094178400804247 /* UserViewController.swift */,
 				5724049520944CB400804247 /* CameraPreviewView.swift */,
 				5724049120941C1A00804247 /* CameraViewController.swift */,
