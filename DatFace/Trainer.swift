@@ -37,28 +37,31 @@ class Trainer{
     
     func setID(ID: String){
         identification = ID
-        print(identification!)
+//        print(identification!)
     }
     
     
     func getImages(){
         let image_dir = client.dir(datFaceCollection)
         self.jsonData = createJSONFormat()
-        image_dir.forEach(file: { (file) in
+        
+        //Get rid of warning
+        _ = image_dir.forEach(file: { (file) in
+            
             if let baseName = file?.basename(){
-                //print(imgJSONCollection)
-                let imageJSON: Data = self.convertToJSON(fileName: baseName)
-                //Get the images array from our json
                 
                 
-                //Make a dictionary then pass that dictionary to an array and then set the value of the images array to that newly created array
-                let imageDictionary = try! JSONSerialization.jsonObject(with: imageJSON, options: []) as! [String : String]
-                
-                self.images.append(imageDictionary)
-                
-                if self.images.count == self.AMOUNTOFIMAGES{
-                    self.trainImages()
+                if let _imageJSON: Data = self.convertToJSON(fileName: baseName){
+                    let imageJSON: Data = _imageJSON
+                    
+                    print(file?.basename())
+                    
+                    //Make a dictionary then pass that dictionary to an array and then set the value of the images array to that newly created array
+                    let imageDictionary = try! JSONSerialization.jsonObject(with: imageJSON, options: []) as! [String : String]
+                    
+                    self.images.append(imageDictionary)
                 }
+                
             }
             else{
                 print("Failed to convert to JSON....")
@@ -66,55 +69,51 @@ class Trainer{
             
             
         }) { (error) in
-            print(error)
-        }
+            print("Error: \(String(describing: error))")
+            
+            self.trainImages()
+        }          
 
     }
     
     func trainImages(){
         jsonData["images"] = images
-        print(jsonData)
+//        print(jsonData)
         
-        do{
-            
-            let json = try! JSONSerialization.data(withJSONObject: jsonData, options: .prettyPrinted)
-            
-            print(JSONSerialization.isValidJSONObject(json))
-            if let JSONString = String(data: json, encoding: .utf8) {
-                print(JSONString)
-            
-                let client = Algorithmia.client(simpleKey: APIkey)
-                let algo = client.algo(algoUri: "cv/FaceRecognition/0.2.2")
-                algo.pipe(rawJson: JSONString) { (resp, error) in
-                    print(resp.getJson())
-                }
+        let json = try! JSONSerialization.data(withJSONObject: jsonData, options: .prettyPrinted)
+        
+//        print(JSONSerialization.isValidJSONObject(json))
+        if let JSONString = String(data: json, encoding: .utf8) {
+            print(JSONString)
+        
+            let client = Algorithmia.client(simpleKey: APIkey)
+            let algo = client.algo(algoUri: "cv/FaceRecognition/0.2.2")
+            algo.pipe(rawJson: JSONString) { (resp, error) in
+                print(resp.getJson())
             }
         }
-        catch{
-            fatalError("Error Training Images...\(error)")
-            print(error)
-        }
+
     }
 
     //
-    func convertToJSON(fileName: String)->Data{
+    func convertToJSON(fileName: String)->Data?{
+        
+        //Soon remove the previous classifier
+        if fileName.hasPrefix("users_") && fileName.hasSuffix(".state"){
+            return nil
+        }
         let jsonFormat = Image(url: datFaceCollection + fileName, person: identification!)
         
         let jsonEncoder = JSONEncoder()
-        do{
-            let jsonData = try! jsonEncoder.encode(jsonFormat)
+        let jsonData = try! jsonEncoder.encode(jsonFormat)
+        return jsonData
 
-            return jsonData
-        }
-        catch{
-            print(error)
-        }
     }
         
     
     //Creates our template json
     func createJSONFormat()->[String: Any]{
-        var jsonObject: [String: Any] = [
+        let jsonObject: [String: Any] = [
             "name_space" : String("users"),
             "data_collection" : String("DatFace"),
             "action" : String("add_images"),

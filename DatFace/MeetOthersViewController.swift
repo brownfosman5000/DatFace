@@ -11,6 +11,7 @@ import UIKit
 class MeetOthersViewController: UIViewController {
     
     var trainer = Trainer()
+    var predictor = Predictor(image: "thing")
     var baseURL: String!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,7 @@ class MeetOthersViewController: UIViewController {
     }
     
     @IBAction func buttonClicked(_ sender: Any) {
-        trainer.getImages()
+        predictor.predict()
     }
     
     /*

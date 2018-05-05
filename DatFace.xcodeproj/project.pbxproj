@@ -14,6 +14,7 @@
 		57661D7220950B4E00A83431 /* Trainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57661D7120950B4E00A83431 /* Trainer.swift */; };
 		57661D74209519F300A83431 /* MeetOthersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57661D73209519F300A83431 /* MeetOthersViewController.swift */; };
 		57BC9384209BF59900288430 /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BC9383209BF59900288430 /* config.swift */; };
+		57C03C6F209D41D000EF0789 /* Predictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C03C6E209D41D000EF0789 /* Predictor.swift */; };
 		57FAC4BD209409EB0067B62F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FAC4BC209409EB0067B62F /* AppDelegate.swift */; };
 		57FAC4BF209409EB0067B62F /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 57FAC4BE209409EB0067B62F /* art.scnassets */; };
 		57FAC4C1209409EB0067B62F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FAC4C0209409EB0067B62F /* ViewController.swift */; };
@@ -31,6 +32,7 @@
 		57661D7120950B4E00A83431 /* Trainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trainer.swift; sourceTree = "<group>"; };
 		57661D73209519F300A83431 /* MeetOthersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetOthersViewController.swift; sourceTree = "<group>"; };
 		57BC9383209BF59900288430 /* config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
+		57C03C6E209D41D000EF0789 /* Predictor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Predictor.swift; sourceTree = "<group>"; };
 		57FAC4B9209409EB0067B62F /* DatFace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DatFace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57FAC4BC209409EB0067B62F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57FAC4BE209409EB0067B62F /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				5724049120941C1A00804247 /* CameraViewController.swift */,
 				57661D73209519F300A83431 /* MeetOthersViewController.swift */,
 				57661D6D20946B2900A83431 /* PhotoCaptureProcessor.swift */,
+				57C03C6E209D41D000EF0789 /* Predictor.swift */,
 				57661D7120950B4E00A83431 /* Trainer.swift */,
 			);
 			path = DatFace;
@@ -227,6 +230,7 @@
 				5724049220941C1A00804247 /* CameraViewController.swift in Sources */,
 				5724049620944CB400804247 /* CameraPreviewView.swift in Sources */,
 				572404902094178400804247 /* UserViewController.swift in Sources */,
+				57C03C6F209D41D000EF0789 /* Predictor.swift in Sources */,
 				57661D6E20946B2900A83431 /* PhotoCaptureProcessor.swift in Sources */,
 				57661D7220950B4E00A83431 /* Trainer.swift in Sources */,
 				57BC9384209BF59900288430 /* config.swift in Sources */,
@@ -371,7 +375,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 723USM24FF;
 				INFOPLIST_FILE = DatFace/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = fosterbrown;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -387,7 +394,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 723USM24FF;
 				INFOPLIST_FILE = DatFace/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = fosterbrown;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
